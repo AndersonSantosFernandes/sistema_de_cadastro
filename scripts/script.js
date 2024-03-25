@@ -1,9 +1,9 @@
-const dataAtual = new Date()           
+const dataAtual = new Date()
 //padStart(x,x) serve para quando se deseja mostrar um numero sosinho
 //como dia, de 1 a 9 o 0 é acrescentado a esquerda             
 const dia = String(dataAtual.getDate()).padStart(2, '0')
 // O mes começa em '0' necessitando adicionar mais 1 pra ficar correto
-const mes = String(dataAtual.getMonth()+1).padStart(2, '0')
+const mes = String(dataAtual.getMonth() + 1).padStart(2, '0')
 const ano = String(dataAtual.getFullYear())
 
 const dataCompleta = `${dia}/${mes}/${ano}`
@@ -70,7 +70,7 @@ function gravar() {
                 }
             }
             // Instanciando a classe Usuarios
-            const salvando = new Usuarios(getNome, getEmail, getSenha ,dataCompleta)
+            const salvando = new Usuarios(getNome, getEmail, getSenha, dataCompleta)
             // Executando o método para salvar novo usuário
             salvando.salvarStorage()
 
@@ -190,7 +190,25 @@ if (sessionStorage.getItem('usuarioLogado') != null) {
     showUsuario.innerHTML = `Olá, ${usando}`
 }
 
+//Arrai de apoio
+arrayDelete = []
 
+//Deletar usuário
+function delUsuario(chave) {
+
+    // arrayDelete[] recebe array de objetos do localStorage
+    arrayDelete = JSON.parse(localStorage.getItem('cadastrado'))
+
+    // Retira o objeto interno através da chave escolhida vinda peta função
+    arrayDelete.splice(chave, 1)
+
+    //Feita a alteração grava de volta no localStorage atualizado
+    localStorage.setItem('cadastrado', JSON.stringify(arrayDelete))
+
+    //Dá um 'refresh' na pagina para já mostrar a alteração
+    location.href = "./home.html"
+
+}
 
 // Função que encerra a sessão
 const encerrarSessao = () => {
