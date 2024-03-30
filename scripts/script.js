@@ -140,8 +140,10 @@ if (sessionStorage.getItem('usuarioLogado')) {
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./home.html">HOME</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./calculos.html">Cálculos</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./utilidades.html">Utilidades</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./accordion.html">Accordion</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./teste.html">Teste</a></li>
 
-    </div>
+        </div>
 
 </ul>
 </div>
@@ -168,7 +170,9 @@ function logar() {
         if (emailUsuario == retornoLogado[i]['emailUs'] && senhaUsuario == retornoLogado[i]['senhaUs']) {
 
             // Encontrando a combinação, cria uma com o nome do usuário
-            sessionStorage.setItem('usuarioLogado', retornoLogado[i]['nomeUs'])
+
+            objetoLogado = {nomeSessao: retornoLogado[i]['nomeUs'], emailSessao: retornoLogado[i]['emailUs'] }
+            sessionStorage.setItem('usuarioLogado', JSON.stringify(objetoLogado))
 
             // alert("Logado com sucesso")
             location.href = "./pages/home.html"
@@ -184,10 +188,11 @@ function logar() {
 
 }
 let showUsuario = document.getElementById('nomeUsuario')
-let usando = sessionStorage.getItem('usuarioLogado')
+let usando = JSON.parse(sessionStorage.getItem('usuarioLogado'))
+console.log('Usando',usando.emailSessao)
 // Caso haja uma sessão, é exibido onome do usuário logado no header da página home
 if (sessionStorage.getItem('usuarioLogado') != null) {
-    showUsuario.innerHTML = `Olá, ${usando}`
+    showUsuario.innerHTML = `Olá, ${usando.nomeSessao}`
 }
 
 //Arrai de apoio

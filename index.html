@@ -13,7 +13,12 @@
 
     <link rel="stylesheet" href="./css/main_style.css">
     <title>Testando</title>
-
+<script>
+    //Obriga encerrar a seesão para acessar a index 
+    if(sessionStorage.getItem('usuarioLogado')){
+        location.href = './pages/home.html'
+    }
+</script>
 
 </head>
 
@@ -29,7 +34,7 @@
                 <div style="text-align:center;">
                     <input type="email" id="email" placeholder="Email" required><br>
                     <input type="password" id="password" placeholder="Password" required><br>
-                    <button class="btnAcao" onclick="logar()">Logar</button>
+                    <button  class="btnAcao" onclick="logar()">Logar</button>
                 </div>
             </div>
             <button class="btnGiro" id="btn1" onclick="girarCadastro()">Ir para cadastro</button>
