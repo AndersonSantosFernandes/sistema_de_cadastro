@@ -12,6 +12,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/main_style.css">
+  <link rel="stylesheet" href="./0_stylePages.css">
   <script>
     // Verifica se tem algum usuário logado, caso contrario redireciona para tela de login
     // Evitando acessar a página direto pela url
@@ -42,13 +43,53 @@
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Accordion Item #1
+              Formula de Bhaskara
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the first item's accordion body.
+             <div class="accordionContent">
+              <div class="explique">
+                <h4>A fórmula de Bhaskara nos ajuda a resolver qualquer equação do segundo grau. Primeiramente, convertemos a equação para a forma ax²+bx+c=0, na qual a, b e c são coeficientes. Em seguida, inserimos esses coeficientes na fórmula: (-b±√(b²-4ac))/(2a) .</h4>
+              </div>
+              <div class="calculo">
+                <div class="inputs">
+                  <h2 class="title__eccondary">Insira os valores de A, B e C</h2>
+                  <br>
+                  <p>
+                    <label for="valor__de__a">Valor de A</label>
+                  <input type="number" name="" id="valor__de__a">
+                  </p>
+                  <p>
+                    <label for="valor__de__b">Valor de B</label>
+                  <input type="number" name="" id="valor__de__b">
+                  </p>
+                  <p>
+                    <label for="valor__de__c">Valor de C</label>
+                  <input type="number" name="" id="valor__de__c">
+                  </p>
+                  <p>
+                    <button class="btn" onclick="claculaBhaskara()">Calcular</button>
+                  </p>
+                </div>
+                <div class="results">
+                  <h2 class="title__eccondary">Resultados</h2>
+                  <br>
+                  <p>
+                    <label for="valor__de__delta">Delta</label>
+                  <input type="number" name="" id="valor__de__delta" disabled="disabled">
+                  </p>
+                  <p>
+                    <label for="valor__raiz_1">Raíz 1</label>
+                  <input type="number" name="" id="valor__raiz_1" disabled="disabled">
+                  </p>
+                  <p>
+                    <label for="valor__raiz_2">Raíz 2</label>
+                  <input type="number" name="" id="valor__raiz_2" disabled="disabled">
+                  </p>
+                </div>
+              </div>
+             </div>
             </div>
           </div>
         </div>
@@ -205,6 +246,7 @@
     </div>
   </main>
   <script src="../scripts/script.js"></script>
+  <script src="./0_script.js"></script>
 
 </body>
 
