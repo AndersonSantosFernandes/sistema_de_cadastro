@@ -63,7 +63,7 @@ let getTemperature = document.getElementById('value__temperature')
                 `
                 <h3>${this.valorTemperatura} fahrenheit equivalem a</h3>
                 <br>
-                <h3>${retornandoC.toFixed(1)} grus celcius</h3>
+                <h3>${retornandoC.toFixed(1)} graus celcius</h3>
                 `
                 
             }
