@@ -81,3 +81,135 @@ let getTemperature = document.getElementById('value__temperature')
 
 
 }
+
+//Jogo adivinha no chute:
+//função que sorteia o número randomoco no jogo adivinha
+function sorteia(){
+    var variacao = 0
+     chances = 1
+     
+    var rad01 = window.document.getElementsByName('valor')
+    
+    if(rad01[0].checked){
+        variacao = 10
+        chances = 4
+    }else if(rad01[1].checked){
+        variacao = 50
+        chances = 6
+    }else if(rad01[2].checked){
+        variacao = 100
+        chances = 8
+    }
+    var resultado = window.document.getElementById('direita')
+     resultado.innerHTML = 
+     `
+     <h3>
+     Tente adivinhar o número secreto entre 1 e ${variacao}<br>
+     Você terá ${chances} chances...
+    </h3>
+     <input type="number" name="jogador" id="play">
+
+     
+     `
+   // window.alert(variacao)
+     secreto = Number.parseInt(Math.random()*variacao+1)
+    var sorteio = window.document.getElementById('sort')
+    // chances1 = Number.parseInt(chances.value)
+    sorteio.innerHTML = 
+    `
+    <input class="btn" type="button" value="Adivinhar" id="advnh" onclick="adivinhar()">
+    <audio id="music" autoplay>
+    <source src="audio/go.wav" type = "audio/mpeg">
+   </audio>
+   
+    ` 
+    var jogadas = window.document.getElementById('esquerdaIn')
+    jogadas.innerHTML =   ` <h3>
+    Tente sdivinhar chutando para mais ou para menos
+</h3>`
+}
+//função das adivinhações no jogo adivinha
+function adivinhar(){
+    var ganhou = false
+    var jogando = window.document.getElementById('play')
+    var jogando1 = Number.parseInt(jogando.value) 
+   
+    if(jogando1 > secreto){
+        var jogadas = window.document.getElementById('esquerdaIn')
+        chances = chances-1
+        jogadas.innerHTML = 
+        `
+        
+        <h3>O número escolhido é maior que o secreto!<br>Tem mais ${chances} chances </h3>
+        <audio id="music" autoplay>
+        <source src="audio/games01.mp3" type = "audio/mpeg">
+       </audio>
+        `
+        
+    }else if(jogando1 < secreto){
+        var jogadas = window.document.getElementById('esquerdaIn')
+        chances = chances-1
+        jogadas.innerHTML = 
+        `
+        <h3>O número escolhido é menor que o secreto<br>Tem mais ${chances} chances</h3>
+        <audio id="music" autoplay>
+        <source src="audio/games02.mp3" type = "audio/mpeg">
+       </audio> 
+        `
+       
+    }else if(jogando1 == secreto){
+        ganhou = true
+       /* var jogadas = window.document.getElementById('esquerdaIn')
+    
+        jogadas.innerHTML = 
+        `
+        Parabéns! Acertou! O número é ${secreto}
+        `*/
+    }
+    if(chances == 0){
+         var resultado = window.document.getElementById('direita')
+    resultado.innerHTML = 
+    `
+    <h3>Suas tentativas acabaram <br> Tente novamente, pois o número secreto foi:  ${secreto}</h3>
+    <br>
+    <h3> Escolha um intervalo e aperte em sortear para recomeçar</h3>
+    <br>
+    <input class="btn" type="button" value="Sortear" onclick="sorteia()">
+    <audio id="music" autoplay>
+    <source src="audio/vaia.wav" type = "audio/mpeg">
+   </audio>
+    `
+    var jogadas = window.document.getElementById('esquerdaIn')
+    
+    jogadas.innerHTML = 
+    `
+    <img id="fogos" src="../images/perdeu.gif" width="350" height="135" alt="fogos">
+    
+    `
+
+    }else if(ganhou == true){
+        var resultado = window.document.getElementById('direita')
+    resultado.innerHTML = 
+    `
+    <h1>Muito bem! <br> O número sorteado foi ${secreto}</h1>
+    <br>
+    <h3>Escolha um intervalo e aperte em sortear para recomeçar</h3>
+    <br>
+    <input class="btn" type="button" value="Sortear" onclick="sorteia()">
+    <audio id="music" autoplay>
+    <source src="audio/applausos.wav" type = "audio/mpeg">
+   </audio>
+    `
+    var jogadas = window.document.getElementById('esquerdaIn')
+    
+    jogadas.innerHTML = 
+    `
+    
+    <img id="fogos" src="../images/fogos.gif" width="350" height="135" alt="fogos">
+    
+    `
+    
+}  
+}
+
+

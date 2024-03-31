@@ -110,7 +110,6 @@
               <div class="accordionContent">
                 <div class="explique">
                   <h4>
-
                     Como calcular a temperatura em graus Celsius?
                     No estudo de escalas de temperatura, aprendemos que a conversão de graus Fahrenheit (F) para
                     graus Celsius (C) se dá pela fórmula C=5/9. (F-32), ou, de forma equivalente por C=(F-32)/1,8.
@@ -156,14 +155,66 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Accordion Item #3
+                Adivinhe o número sorteado
               </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
+              <div class="accordion-body">
+               
+                <div class="accordionContent">
+                  <div class="explique">
+                     <h4>
+                      Neste mini jogo será sorteado um número onde você terá que adivinhá-lo chutando para mais
+                      ou para menos. Pode escolhe entre as opçõe e sortear
+                    
+                     </h4>
+                    
+                  </div>
+                  <br>
+  
+                  <div class="calculo">
+  
+                     
+                      <div class="inputs">
+                          <h2>
+                              Jogo do adivinha
+                          </h2>
+                          <p>
+                              <label for="rad1">10 números com 4 chances</label>
+                              <input type="radio" name="valor" id="rad1" checked>
+                          </p>
+                          <p>
+                              <label for="rad2">50 números com 6 chances</label>
+                              <input type="radio" name="valor" id="rad2">
+                          </p>
+                          <p>
+                              <label for="rad3">100 números com 8 chances</label>
+                              <input type="radio" name="valor" id="rad3">
+                          </p>
+                          <div id="sort">
+                              <input class="btn" type="button" value="Sortear" onclick="sorteia()">
+                          </div>
+                          <div id="esquerdaIn">
+                              <h3>
+                                  Tente adivinhar chutando para mais ou para menos
+                              </h3>
+                    
+                          </div>
+                      </div>
+                      <div class="results">
+                          
+                          <div id="direita">
+                              <h3>
+                                  Escolha um intervalo à esquerda e clique em sortear
+                              </h3>
+                  
+                          </div>
+                          
+                      </div>
+  
+                  </div>
+              </div>
+
               </div>
             </div>
           </div>

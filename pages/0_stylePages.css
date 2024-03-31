@@ -7,7 +7,7 @@
 .inputs , .results{
     width: 100%;
     /* border: 1px solid black; */
-    padding: 5px;
+    padding: 5px; 
     text-align: center;
     border-radius: 20px;
     margin-bottom: 20px;
