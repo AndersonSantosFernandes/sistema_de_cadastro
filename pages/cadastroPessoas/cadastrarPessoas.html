@@ -11,12 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../../css/main_style.css">
+    <link rel="stylesheet" href="./pessoas.css">
     <script>
         // Verifica se tem algum usuário logado, caso contrario redireciona para tela de login
         // Evitando acessar a página direto pela url
         if (sessionStorage.getItem("usuarioLogado") == null) {
-            location.href = "../index.html"
+            location.href = "../../index.html"
         }
     </script>
     <title>Cálculos</title>
@@ -35,12 +36,29 @@
     <main class="mainHome">
 
         <div class="container">
-            <h2 class="tituloHome">Cálculos</h2>
+            <h2 class="tituloHome">Cadastrar Pessoa</h2>
+            <input type="number" name="" id="personId" disabled="disabled">    
+            <input type="text" name="" id="personNome" placeholder="Nome">
+            <input type="text" name="" id="personSobrenome" placeholder="Sobrenome">
+            <input type="email" name="" id="personEmail" placeholder="E-mail">
+            <input type="tel" name="" id="personTelefone" placeholder="Telefone">
+            <label for="male">Menino</label>
+            <input type="radio" name="genero" id="male" checked>
+            <label for="female">Menina</label>
+            <input type="radio" name="genero" id="female">
+            <select name="" id="personEstado">
+                <!-- lista vem do JS -->
+            </select>
+
+            <select name="" id="personCargo">
+                <!-- lista vem do JS -->
+            </select>
+
 
         </div>
     </main>
-    <script src="../scripts/script.js"></script>
-
+    <script src="../../scripts/script.js"></script>
+    <script src="./persons.js"></script>
 </body>
 
 </html>

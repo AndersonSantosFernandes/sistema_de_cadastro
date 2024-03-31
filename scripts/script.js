@@ -137,11 +137,11 @@ if (sessionStorage.getItem('usuarioLogado')) {
 </button>
 <ul class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav ">
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./home.html">HOME</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./calculos.html">Cálculos</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./utilidades.html">Utilidades</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./accordion.html">Accordion</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="./teste.html">Teste</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../home/home.html">HOME</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../calculos/calculos.html">Cálculos</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../utilidades/utilidades.html">Utilidades</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../cadastroPessoas/cadastrarPessoas.html">Cadastro de Pessoas</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../listaPessoas/lista.html">Lista de Pessoas</a></li>
 
         </div>
 
@@ -175,7 +175,7 @@ function logar() {
             sessionStorage.setItem('usuarioLogado', JSON.stringify(objetoLogado))
 
             // alert("Logado com sucesso")
-            location.href = "./pages/home.html"
+            location.href = "./pages/home/home.html"
             break;
         }
 

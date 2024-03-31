@@ -183,7 +183,7 @@ function adivinhar(){
     
     jogadas.innerHTML = 
     `
-    <img id="fogos" src="../images/perdeu.gif" width="350" height="135" alt="fogos">
+    <img id="fogos" src="./img/perdeu.gif" width="300" height="135" alt="perdeu o jogo">
     
     `
 
@@ -205,7 +205,7 @@ function adivinhar(){
     jogadas.innerHTML = 
     `
     
-    <img id="fogos" src="../images/fogos.gif" width="350" height="135" alt="fogos">
+    <img id="fogos" src="./img/fogos.gif" width="300" height="135" alt="fogos de artifício">
     
     `
     
