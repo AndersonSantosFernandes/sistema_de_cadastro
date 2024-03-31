@@ -12,6 +12,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="./0_stylePages.css">
     <script>
         // Verifica se tem algum usuário logado, caso contrario redireciona para tela de login
         // Evitando acessar a página direto pela url
@@ -38,10 +39,50 @@
         <div class="container">
             <h2 class="tituloHome">Utilidades</h2>
 
-        </div>
+            <div class="accordionContent">
+                <div class="explique">
+                    <h4>
+
+                        Como calcular a temperatura em graus Celsius?
+                        No estudo de escalas de temperatura, aprendemos que a conversão de graus Fahrenheit (F) para
+                        graus Celsius (C) se dá pela fórmula C=5/9. (F-32), ou, de forma equivalente por C=(F-32)/1,8.
+                        Para converter ao contrário usamos: °C = (32 °F − 32) × 5/9
+
+                    </h4>
+                </div>
+                <hr>
+                <div class="calculo">
+                    <div class="inputs">
+                        <h2 class="title__eccondary">Insira a temperatura e escolha</h2>
+                        <br>
+                        <p>
+                            <label for="celsius__fahrenheit">°C para Fahrenheith</label>
+                            <input type="radio" name="tempSelect" id="celsius__fahrenheit">
+                        </p>
+                        <p>
+                            <label for="fahrenheit__celcius">Fahrenheith para °C</label>
+                            <input type="radio" name="tempSelect" id="fahrenheit__celcius">
+                        </p>
+                        <p>
+                            <label for="value__temperature">Temperatura</label>
+                            <input type="number" name="" id="value__temperature">
+                        </p>
+                        <p>
+                            <button class="btn" onclick="calculateTemperature()">Calcular</button>
+                        </p>
+                    </div>
+                    <div class="results">
+                        <h2 class="title__eccondary">Resultados</h2>
+                        <br>
+                        <div id="return__temperature">
+
+                        </div>
+                    </div>
+                </div>
+
     </main>
     <script src="../scripts/script.js"></script>
-
+    <script src="./0_script.js"></script>
 </body>
 
 </html>

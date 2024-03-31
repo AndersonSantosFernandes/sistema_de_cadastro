@@ -48,48 +48,51 @@
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-             <div class="accordionContent">
-              <div class="explique">
-                <h4>A fórmula de Bhaskara nos ajuda a resolver qualquer equação do segundo grau. Primeiramente, convertemos a equação para a forma ax²+bx+c=0, na qual a, b e c são coeficientes. Em seguida, inserimos esses coeficientes na fórmula: (-b±√(b²-4ac))/(2a) .</h4>
-              </div>
-              <div class="calculo">
-                <div class="inputs">
-                  <h2 class="title__eccondary">Insira os valores de A, B e C</h2>
-                  <br>
-                  <p>
-                    <label for="valor__de__a">Valor de A</label>
-                  <input type="number" name="" id="valor__de__a">
-                  </p>
-                  <p>
-                    <label for="valor__de__b">Valor de B</label>
-                  <input type="number" name="" id="valor__de__b">
-                  </p>
-                  <p>
-                    <label for="valor__de__c">Valor de C</label>
-                  <input type="number" name="" id="valor__de__c">
-                  </p>
-                  <p>
-                    <button class="btn" onclick="claculaBhaskara()">Calcular</button>
-                  </p>
+              <div class="accordionContent">
+                <div class="explique">
+                  <h4>A fórmula de Bhaskara nos ajuda a resolver qualquer equação do segundo grau. Primeiramente,
+                    convertemos a equação para a forma ax²+bx+c=0, na qual a, b e c são coeficientes. Em seguida,
+                    inserimos esses coeficientes na fórmula: (-b±√(b²-4ac))/(2a) .</h4>
                 </div>
-                <div class="results">
-                  <h2 class="title__eccondary">Resultados</h2>
-                  <br>
-                  <p>
-                    <label for="valor__de__delta">Delta</label>
-                  <input type="number" name="" id="valor__de__delta" disabled="disabled">
-                  </p>
-                  <p>
-                    <label for="valor__raiz_1">Raíz 1</label>
-                  <input type="number" name="" id="valor__raiz_1" disabled="disabled">
-                  </p>
-                  <p>
-                    <label for="valor__raiz_2">Raíz 2</label>
-                  <input type="number" name="" id="valor__raiz_2" disabled="disabled">
-                  </p>
+                <hr>
+                <div class="calculo">
+                  <div class="inputs">
+                    <h2 class="title__eccondary">Insira os valores de A, B e C</h2>
+                    <br>
+                    <p>
+                      <label for="valor__de__a">Valor de A</label>
+                      <input type="number" name="" id="valor__de__a">
+                    </p>
+                    <p>
+                      <label for="valor__de__b">Valor de B</label>
+                      <input type="number" name="" id="valor__de__b">
+                    </p>
+                    <p>
+                      <label for="valor__de__c">Valor de C</label>
+                      <input type="number" name="" id="valor__de__c">
+                    </p>
+                    <p>
+                      <button class="btn" onclick="claculaBhaskara()">Calcular</button>
+                    </p>
+                  </div>
+                  <div class="results">
+                    <h2 class="title__eccondary">Resultados</h2>
+                    <br>
+                    <p>
+                      <label for="valor__de__delta">Delta</label>
+                      <input type="number" name="" id="valor__de__delta" disabled="disabled">
+                    </p>
+                    <p>
+                      <label for="valor__raiz_1">Raíz 1</label>
+                      <input type="number" name="" id="valor__raiz_1" disabled="disabled">
+                    </p>
+                    <p>
+                      <label for="valor__raiz_2">Raíz 2</label>
+                      <input type="number" name="" id="valor__raiz_2" disabled="disabled">
+                    </p>
+                  </div>
                 </div>
               </div>
-             </div>
             </div>
           </div>
         </div>
@@ -98,152 +101,200 @@
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Accordion Item #2
+              Conversor de temperatura
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the second item's accordion body. 
-              Let's imagine this being filled with some actual content.
+
+              <div class="accordionContent">
+                <div class="explique">
+                  <h4>
+
+                    Como calcular a temperatura em graus Celsius?
+                    No estudo de escalas de temperatura, aprendemos que a conversão de graus Fahrenheit (F) para
+                    graus Celsius (C) se dá pela fórmula C=5/9. (F-32), ou, de forma equivalente por C=(F-32)/1,8.
+                    Para converter ao contrário usamos: °C = (32 °F − 32) × 5/9
+
+                  </h4>
+                </div>
+                <hr>
+                <div class="calculo">
+                  <div class="inputs">
+                    <h2 class="title__eccondary">Insira a temperatura e escolha</h2>
+                    <br>
+                    <p>
+                      <label for="celsius__fahrenheit">°C para Fahrenheith</label>
+                      <input type="radio" name="tempSelect" id="celsius__fahrenheit" checked>
+                    </p>
+                    <p>
+                      <label for="fahrenheit__celcius">Fahrenheith para °C</label>
+                      <input type="radio" name="tempSelect" id="fahrenheit__celcius">
+                    </p>
+                    <p>
+                      <label for="value__temperature">Temperatura</label>
+                      <input type="number" name="" id="value__temperature">
+                    </p>
+                    <p>
+                      <button class="btn" onclick="calculateTemperature()">Calcular</button>
+                    </p>
+                  </div>
+                  <div class="results">
+                    <h2 class="title__eccondary">Resultados</h2>
+                    <br>
+                    <div id="return__temperature">
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
           </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #4
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFife" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #5
+              </button>
+            </h2>
+            <div id="flush-collapseFife" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #6
+              </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #7
+              </button>
+            </h2>
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #8
+              </button>
+            </h2>
+            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #9
+              </button>
+            </h2>
+            <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseThree">
+                Accordion Item #10
+              </button>
+            </h2>
+            <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+
+
+
         </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #4
-            </button>
-          </h2>
-          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseFife" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #5
-            </button>
-          </h2>
-          <div id="flush-collapseFife" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #6
-            </button>
-          </h2>
-          <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #7
-            </button>
-          </h2>
-          <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #8
-            </button>
-          </h2>
-          <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #9
-            </button>
-          </h2>
-          <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #10
-            </button>
-          </h2>
-          <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.</div>
-          </div>
-        </div>
 
 
 
 
       </div>
-
-
-
-
-
-
-
-
-
-
-    </div>
   </main>
   <script src="../scripts/script.js"></script>
   <script src="./0_script.js"></script>
