@@ -20,7 +20,7 @@
             location.href = "../../index.html"
         }
     </script>
-    <title>Cálculos</title>
+    <title>Cadastrar Pessoas</title>
 </head>
 
 <body class="bodyHome">
@@ -35,28 +35,49 @@
     </nav>
     <main class="mainHome">
 
-        <div class="container">
+        <div class="container container__cadastrar">
             <h2 class="tituloHome">Cadastrar Pessoa</h2>
-            <input type="number" name="" id="personId" disabled="disabled">    
-            <input type="text" name="" id="personNome" placeholder="Nome">
-            <input type="text" name="" id="personSobrenome" placeholder="Sobrenome">
-            <input type="email" name="" id="personEmail" placeholder="E-mail">
-            <input type="tel" name="" id="personTelefone" placeholder="Telefone">
-            <label for="male">Menino</label>
-            <input type="radio" name="genero" id="male" checked>
-            <label for="female">Menina</label>
-            <input type="radio" name="genero" id="female">
-            <select name="" id="personEstado">
+
+            <input class="inputz" type="text" name="" id="personNome" placeholder="Nome">
+            <input class="inputz" type="text" name="" id="personLastName" placeholder="Sobrenome">
+            <input class="inputz" type="email" name="" id="personEmail" placeholder="E-mail">
+
+            <select class="inputz" name="" id="personOcupation">
                 <!-- lista vem do JS -->
             </select>
-
-            <select name="" id="personCargo">
-                <!-- lista vem do JS -->
-            </select>
-
+            <hr> 
+            <p>
+                <button class="btn btn-primary" onclick="newPerson()">Salvar</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cadastrar novo cargo
+                </button>
+            </p>
+            
 
         </div>
     </main>
+
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Inserir novo cargo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="" id="newOcupation" placeholder="Digite um novo cargo">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="newCargo()">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../../scripts/script.js"></script>
     <script src="./persons.js"></script>
 </body>

@@ -136,7 +136,7 @@ if (sessionStorage.getItem('usuarioLogado')) {
     <span class="navbar-toggler-icon"></span>
 </button>
 <ul class="collapse navbar-collapse " id="navbarNavAltMarkup">
-    <div class="navbar-nav ">
+    <div class="navbar-nav navegar ">
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../home/home.html">HOME</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../calculos/calculos.html">Cálculos</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../utilidades/utilidades.html">Utilidades</a></li>
@@ -219,5 +219,5 @@ function delUsuario(chave) {
 const encerrarSessao = () => {
     sessionStorage.clear('usuarioLogado')
     //Redireciona de volta para index
-    location.href = "../index.html"
+    location.href = "../../index.html"
 }

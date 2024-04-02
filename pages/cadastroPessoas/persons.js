@@ -1,22 +1,48 @@
-const estados = ['Selecione','AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO']
-const cargos = ['Selecione','Dev Front end', 'Dev back end', 'Dev full stack','Gerente de projeto','Engenheiro de software','Scrum master','Arquiteto de software']
-listaEstados = document.getElementById('personEstado')
-listaCargos = document.getElementById('personCargo')
 
-for (let i = 0; i < estados.length; i++) {
+const cargos = ['Selecione', 'Dev Front end', 'Dev back end', 'Dev full stack', 'Gerente de projeto', 'Engenheiro de software', 'Scrum master', 'Arquiteto de software']
+listaEstados = document.getElementById('personCountry')
+listaCargos = document.getElementById('personOcupation')
 
-    listaEstados.innerHTML +=
-    `
-    <option value="${estados[i]}">${estados[i]}</option>
-    
-    `    
+helpArrayPerson = []//Array auxiliar pessoas
+
+function newPerson(){
+
+let newName = document.getElementById('personNome')
+let newLastName = document.getElementById('personLastName')
+let newEmail = document.getElementById('personEmail')
+let newOcupation = document.getElementById('personOcupation')
+
+objectPerson = {name: newName.value, lastName: newLastName.value, email: newEmail.value, ocupation: newOcupation.value}
+
+
+helpArrayPerson = JSON.parse(localStorage.getItem('personCad')) || []
+helpArrayPerson.push(objectPerson)
+localStorage.setItem('personCad', JSON.stringify(helpArrayPerson))
+
+location.href = "cadastrarPessoas.html"
 }
 
-for (let j = 0; j < cargos.length; j++) {
+helpArrayOcupation = []//Array auxiliar cargos
 
+function newCargo(){
+
+let newOcupation = document.getElementById('newOcupation')
+
+objectOcupation = {ocupation: newOcupation.value}
+
+helpArrayOcupation = JSON.parse(localStorage.getItem('ocupations')) || []
+helpArrayOcupation.push(objectOcupation)
+localStorage.setItem('ocupations', JSON.stringify(helpArrayOcupation))
+
+location.href = "cadastrarPessoas.html"
+}
+
+// Lista de cargos
+const ocupationList = JSON.parse(localStorage.getItem('ocupations')) 
+
+for (let j = 0; j < ocupationList.length; j++) {
     listaCargos.innerHTML +=
+        `
+    <option value="${ocupationList[j]['ocupation']}">${ocupationList[j]['ocupation']}</option>    
     `
-    <option value="${cargos[j]}">${cargos[j]}</option>
-    
-    `    
 }
