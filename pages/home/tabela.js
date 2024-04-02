@@ -1,5 +1,5 @@
  verificaLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'))
-console.log('Usando',verificaLogado.emailSessao)
+// console.log('Usando',verificaLogado.emailSessao)
 
 //Exibir tabela com as informações
 const tabela = document.getElementById('corpo')
@@ -17,9 +17,9 @@ for (let j = 0; j < verificaDisponibilidade.length; j++) {
 <td>${verificaDisponibilidade[j]['nomeUs']}</td>
 <td>${verificaDisponibilidade[j]['emailUs']}</td>    
 <td class="alinhaIconeTb">${verificaDisponibilidade[j]['dataCad']}</td>
-<td class="alinhaIconeTb"><button ${desabilitaDelete} class="btnDelete" onclick="delUsuario('${j}')">Del</button></td>
 </tr>
 `
-console.log(verificaDisponibilidade[j]['emailUs'])
+// console.log(verificaDisponibilidade[j]['emailUs'])
 }
 }
+//<td class="alinhaIconeTb"><button ${desabilitaDelete} class="btnDelete" onclick="delUsuario('${j}')">Del</button></td>

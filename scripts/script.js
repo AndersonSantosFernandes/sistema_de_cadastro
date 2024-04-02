@@ -10,7 +10,7 @@ const dataCompleta = `${dia}/${mes}/${ano}`
 
 
 const verificaDisponibilidade = JSON.parse(localStorage.getItem('cadastrado'))
-console.log(verificaDisponibilidade)
+// console.log(verificaDisponibilidade)
 function gravar() {
 
     const getNome = document.getElementById('userCadastro').value
@@ -156,14 +156,14 @@ if (sessionStorage.getItem('usuarioLogado')) {
 function logar() {
 
     const retornoLogado = JSON.parse(localStorage.getItem('cadastrado'))
-    console.log(retornoLogado[0]['emailUs'])
+    // console.log(retornoLogado[0]['emailUs'])
 
     let emailUsuario = document.getElementById("email").value
     let senhaUsuario = document.getElementById("password").value
 
     //Verificação no "BD" se existe usuario e senha compa´tivel
 
-    console.log("Retorno logado", retornoLogado.length)
+    // console.log("Retorno logado", retornoLogado.length)
 
     for (let i = 0; i < retornoLogado.length; i++) {
         // percorre o array procurando email e senha que combinam
@@ -189,7 +189,7 @@ function logar() {
 }
 let showUsuario = document.getElementById('nomeUsuario')
 let usando = JSON.parse(sessionStorage.getItem('usuarioLogado'))
-console.log('Usando',usando.emailSessao)
+// console.log('Usando',usando.emailSessao)
 // Caso haja uma sessão, é exibido onome do usuário logado no header da página home
 if (sessionStorage.getItem('usuarioLogado') != null) {
     showUsuario.innerHTML = `Olá, ${usando.nomeSessao}`
