@@ -12,6 +12,15 @@
     border-radius: 5px;
 }
 
+#updateCargo{
+    border: none;
+}
+.modal-body-div{
+    width: 100%;
+    height: 250px;
+    overflow: scroll;
+}
+
 @media (min-width:800px) {
     .container__cadastrar{
         width: 40%;

@@ -45,7 +45,7 @@
             <select class="inputz" name="" id="personOcupation">
                 <!-- lista vem do JS -->
             </select>
-            <hr> 
+            <hr>
             <p>
                 <button class="btn btn-primary" onclick="newPerson()">Salvar</button>
                 <!-- Button trigger modal -->
@@ -53,13 +53,13 @@
                     Cadastrar novo cargo
                 </button>
             </p>
-             
+
 
         </div>
     </main>
 
-     <!-- Modal -->
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal 01-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -74,10 +74,40 @@
                     <button class="btn btn-secondary" onclick="newCargo()">Salvar</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
 
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Editar cargo
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal 01-->
+    <!-- Modal 2 -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Digite o novo nome no campo ao lado do que se quer editar e salve</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                    <div class="modal-body-div">
+                    <table id="updateCargo">
+                        <!-- Aqui aparece a lista para ediçõ de cargos -->
+                    </table>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
     <script src="../../scripts/script.js"></script>
     <script src="./persons.js"></script>
 </body>
