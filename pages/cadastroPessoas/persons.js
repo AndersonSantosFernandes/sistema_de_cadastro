@@ -68,9 +68,10 @@ for (let j = 0; j < ocupationList.length; j++) {
     updateCargos.innerHTML += 
     `
     <tr>
-        <td>${ocupationList[j]['ocupation']}</td>
-        <td><input type="text" name="nameUpdate"   style="height:25px;" placeholder="Digite aqui "></td>
+       
+        <td><input type="text" name="nameUpdate" value="${ocupationList[j]['ocupation']}"  style="height:25px;" ></td>
         <td><button onclick="updateOcupation('${j}')" class="btn btn-primary">Salvar</button></td>
+        <td><button onclick="deleteOcupation('${j}')" class="btn btn-primary">Deletar</button></td>
     </tr>
     
     `
@@ -84,16 +85,14 @@ function updateOcupation(indiceOcupation) {
 let nameUpdates = document.getElementsByName('nameUpdate')
 
 helpArrayUpdate = ocupationList //Recebe o objeto completo 
-
     
     for (let u = 0; u < ocupationList.length; u++) {
 
         //Procura o objeto com o mesmo numero de ídice
         if (u == indiceOcupation) {
 
-            //Altera o valor da chave do ídice encontrad 
+            //Altera o valor da chave do ídice encontrado 
             helpArrayUpdate[u]['ocupation'] = nameUpdates[u].value
-            console.log(ocupationList[u]['ocupation'])
 
             // Retorna o objeto atualizado para o localStorage
             localStorage.setItem('ocupations' ,JSON.stringify(helpArrayUpdate))
@@ -105,4 +104,28 @@ helpArrayUpdate = ocupationList //Recebe o objeto completo
         }
 
     }
+}
+
+helpArrayDelete = []
+function deleteOcupation(indiceDelete){
+
+helpArrayDelete = ocupationList
+
+for (let d = 0; d < ocupationList.length; d++) {
+   
+    
+    
+    if(d == indiceDelete){
+    
+        helpArrayDelete.splice(indiceDelete,1)
+        localStorage.setItem('ocupations' ,JSON.stringify(helpArrayDelete))
+
+    
+        location.href = "cadastrarPessoas.html"
+        break;
+    }
+
+}
+
+
 }
