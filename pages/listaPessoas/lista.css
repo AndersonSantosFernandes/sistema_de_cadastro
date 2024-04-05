@@ -24,9 +24,8 @@
    width: 100%;
    text-align: center;
  }
- .centre{
-   width: 250px;
-   
+ .modalInput{
+  background-color: rgba(133, 133, 133, 0.158);
  }
 
  @media(min-width: 800px){
