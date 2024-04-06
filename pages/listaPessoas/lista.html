@@ -20,6 +20,10 @@
       location.href = "../../index.html"
     }
   </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
   <title>Lista de pessoas</title>
 </head>
 
@@ -33,41 +37,56 @@
   <nav class="navbar navbar-expand-lg " id="navegando">
     <!-- Aqui é renderizado o menú -->
   </nav>
-  <main class="mainHome">
+  
+  <main class="mainHome" id="mainList">
 
     <div class="container">
       <h2 class="tituloHome">Lista de Pessoas</h2>
+     <button class="btn btn-primary" onclick="sectionList(1)">Exibier lista para pdf</button>
+     <button class="btn btn-primary" onclick="sectionList(2)">Exibier cards</button>
+     <hr>
+      <table id="tablePersons">
+        <thead id="headPersons">
+         <!-- Aqui aparece o header da tabela -->
+        </thead>
+        <tbody id="bodyPersons">
+          <!-- aqui aparecem inpormações em tabela -->
+        </tbody>
+
+      </table>
+
 
       <div id="listPersons">
 
-       
-       
+        <!-- Aqui aparece a lista de pessoas -->
+
       </div>
- 
-     
+
+
 
 
   </main>
   <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar campos</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-      </div>
-      <div class="modal-body">
-        <div id="editPerson">
-
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar campos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <!-- <div class="modal-footer">
+        <div class="modal-body">
+          <div id="editPerson">
+
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancela</button>
         
       </div> -->
+      </div>
     </div>
   </div>
-</div>
   <script src="../../scripts/script.js"></script>
   <script src="./lista.js"></script>
 

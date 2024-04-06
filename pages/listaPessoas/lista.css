@@ -27,6 +27,9 @@
  .modalInput{
   background-color: rgba(133, 133, 133, 0.158);
  }
+ #tablePersons{
+  width: 100%;
+ }
 
  @media(min-width: 800px){
 

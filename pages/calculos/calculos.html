@@ -19,6 +19,8 @@
             location.href = "../../index.html"
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>Cálculos</title>
 </head>
 <a href="../home/home.html"></a>
@@ -34,13 +36,16 @@
     </nav>
     <main class="mainHome">
 
-        <div class="container">
+        <div class="container" id="content">
             <h2 class="tituloHome">Cálculos</h2>
+
+
+            <button id="gerapdf">Gerar PDF</button>
 
         </div>
     </main>
     <script src="../../scripts/script.js"></script>
-
+<script src="./calculos.js"></script>
 </body>
 
 </html>

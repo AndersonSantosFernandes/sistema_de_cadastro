@@ -1,5 +1,23 @@
+
+//Cria sessao pala exibir lista em lista
+const sectionList = (listaCard) =>{
+
+
+   if(listaCard == 1){
+      sessionStorage.setItem('personList','list')
+
+   }else if(listaCard == 2){
+      sessionStorage.setItem('personList','card')
+   
+   }
+   location.href = "lista.html"
+}
+
+
 //Lista de pessoas cadastradas
 let showList = document.getElementById('listPersons')
+let showHeader = document.getElementById('headPersons')
+let showBody = document.getElementById('headPersons')
 const personCadList = JSON.parse(localStorage.getItem('personCad'))
 
 if (personCadList.length == 0) {
@@ -9,6 +27,44 @@ if (personCadList.length == 0) {
    `
 } else {
 
+   //Exibe inpormações em tabela
+   if(sessionStorage.getItem('personList') == 'list'){
+      //Cabeçalho da tabela
+      showHeader.innerHTML = 
+      `
+      <button id="gerapdf">Gerar PDF</button>
+      <h4 class="tituloHome">Lista de Pessoas</h4>
+      <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>E-mail</th>
+      <th>Cargo</th>            
+    </tr>
+
+      
+      `      
+      for (let li = 0; li < personCadList.length; li++) {
+
+         //Corpo da tabela
+         showBody.innerHTML +=
+         `
+         <tr>
+            <td>${personCadList[li]['name']}</td>
+            <td>${personCadList[li]['lastName']}</td>
+            <td>${personCadList[li]['email']}</td>
+            <td>${personCadList[li]['ocupation']}</td>
+          </tr>
+         
+         `
+
+      }
+
+     
+
+   }else{
+
+   
+   //Exibir informações em caards
    for (let i = 0; i < personCadList.length; i++) {
 
       showList.innerHTML += `
@@ -34,9 +90,10 @@ if (personCadList.length == 0) {
     `
    }
 }
+}
 
 
-
+//Deleta de fato um apessoa cadastrada
 function deletePerson(indice) {
 
    const listDelete = JSON.parse(localStorage.getItem('personCad'))
@@ -58,6 +115,7 @@ function deletePerson(indice) {
    location.href = "lista.html"
 }
 
+//Seleciona o arquivo para edição
 arraySelectPerson = []
 function updateUsers(indiceUpdate) {
 
@@ -87,7 +145,7 @@ function updateUsers(indiceUpdate) {
    }
 
 }
-
+// Salvamento de fato da edição
 arrayUpdate = []
 function saveEdition(indiceSave){
    arrayUpdate = personCadList
@@ -111,6 +169,34 @@ let upOcupation = document.getElementById('ocupation')
       }      
    }  
 }
+//Obtenção de data para formar o nome do PDF
+const pdfData = new Date()
+const year = String(pdfData.getFullYear())
+const month = String(pdfData.getMonth()+1).padStart(2,'0')
+const day = String(pdfData.getDay()).padStart(2,'0')
+const hour = String(pdfData.getHours()).padStart(2,'0')
+const minut = String(pdfData.getMinutes()).padStart(2,'0')
 
+const second = String(pdfData.getSeconds()).padStart(2,'0')
 
+const concatName = `${year}-${month}-${day}-${hour}:${minut}:${second}.pdf`
+
+console.log(concatName)
+//Codigo para gerar um pdf da página
+const btnGenerate = document.querySelector("#gerapdf")
+
+btnGenerate.addEventListener("click", () => {
+
+    const content = document.querySelector("#tablePersons")
+
+    const options = {
+        margin: [10,10,10,10],
+        filename: concatName,
+        html2canvas:{scale: 2},
+        jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
+    }
+
+    html2pdf().set(options).from(content).save()
+
+})
 
