@@ -35,6 +35,13 @@
   display: flex;
   column-gap: 5px;
  }
+ .modalSelectList{
+  width: 90%;
+  background-color: rgba(133, 133, 133, 0.158);
+  padding: 6px;
+  border: none;
+  margin-bottom: 10px;
+ }
 
  @media(min-width: 800px){
 
