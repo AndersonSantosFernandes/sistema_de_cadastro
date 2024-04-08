@@ -42,8 +42,13 @@
 
     <div class="container">
       <h2 class="tituloHome">Lista de Pessoas</h2>
-     <button class="btn btn-primary" onclick="sectionList(1)">Exibier lista para pdf</button>
-     <button class="btn btn-primary" onclick="sectionList(2)">Exibier cards</button>
+      <div class="btnsList">
+        <button class="btn btn-primary" onclick="sectionList(1)">Visão para pdf</button>
+        <button class="btn btn-primary" onclick="sectionList(2)">Exibier cards</button>
+        <button class="btn btn-primary" id="gerapdf" style="display: none;">Gerar PDF</button>
+        
+      </div>
+     
      <hr>
       <table id="tablePersons">
         <thead id="headPersons">
@@ -76,14 +81,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <select class="modalInput" name="" id="editSelect">
+            <!-- Seleção de cargos -->
+          </select>
           <div id="editPerson">
 
+            <!-- Aparecem os campos para edição já preenchidos -->
+            
+
           </div>
+         
         </div>
-        <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancela</button>
-        
-      </div> -->
       </div>
     </div>
   </div>

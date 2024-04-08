@@ -29,6 +29,11 @@
  }
  #tablePersons{
   width: 100%;
+  background-color: white;
+ }
+ .btnsList{
+  display: flex;
+  column-gap: 5px;
  }
 
  @media(min-width: 800px){

@@ -3,12 +3,13 @@
 const sectionList = (listaCard) =>{
 
 
+
    if(listaCard == 1){
       sessionStorage.setItem('personList','list')
-
+      
    }else if(listaCard == 2){
       sessionStorage.setItem('personList','card')
-   
+      
    }
    location.href = "lista.html"
 }
@@ -18,6 +19,8 @@ const sectionList = (listaCard) =>{
 let showList = document.getElementById('listPersons')
 let showHeader = document.getElementById('headPersons')
 let showBody = document.getElementById('headPersons')
+let showBtnPdf = document.getElementById('btnPdf')
+const btnPdfs = document.getElementById('gerapdf')
 const personCadList = JSON.parse(localStorage.getItem('personCad'))
 
 if (personCadList.length == 0) {
@@ -29,10 +32,11 @@ if (personCadList.length == 0) {
 
    //Exibe inpormações em tabela
    if(sessionStorage.getItem('personList') == 'list'){
+
+      btnPdfs.style.display = 'block'
       //Cabeçalho da tabela
       showHeader.innerHTML = 
       `
-      <button id="gerapdf">Gerar PDF</button>
       <h4 class="tituloHome">Lista de Pessoas</h4>
       <tr>
       <th>Nome</th>
@@ -62,7 +66,7 @@ if (personCadList.length == 0) {
      
 
    }else{
-
+btnPdfs.style.display = 'none'
    
    //Exibir informações em caards
    for (let i = 0; i < personCadList.length; i++) {
@@ -115,6 +119,23 @@ function deletePerson(indice) {
    location.href = "lista.html"
 }
 
+
+//Lista de cargos
+const ocupList = JSON.parse(localStorage.getItem('ocupations'))
+const listOcup = document.getElementById('editSelect')
+console.log(ocupList)
+
+for (let list = 0; list < ocupList.length; list++) {
+   console.log(ocupList[list]['ocupation'])
+listOcup.innerHTML +=
+`
+<option value="${ocupList[list]['ocupation']}">${ocupList[list]['ocupation']}</option>
+
+` 
+   
+}
+
+
 //Seleciona o arquivo para edição
 arraySelectPerson = []
 function updateUsers(indiceUpdate) {
@@ -122,6 +143,10 @@ function updateUsers(indiceUpdate) {
    let editPersons = document.getElementById('editPerson')
    arraySelectPerson = personCadList
 
+
+   
+
+   
    for (let sel = 0; sel < arraySelectPerson.length; sel++) {
 
       if (indiceUpdate == sel) {
@@ -131,8 +156,7 @@ function updateUsers(indiceUpdate) {
          <input class="modalInput" value="${arraySelectPerson[sel]['name']}" type="text" name="" id="name">
          <input class="modalInput" value="${arraySelectPerson[sel]['lastName']}" type="text" name="" id="lastName">
          <input class="modalInput" value="${arraySelectPerson[sel]['email']}" type="email" name="" id="email" disabled="disabled">
-         <input class="modalInput" value="${arraySelectPerson[sel]['ocupation']}" type="text" name="" id="ocupation">
-
+         
          <hr>
 
          <button type="button" class="btn btn-primary"  onclick="saveEdition('${sel}')" >
@@ -153,7 +177,7 @@ function saveEdition(indiceSave){
 let upName = document.getElementById('name')
 let upLastName = document.getElementById('lastName')
 let upEmail = document.getElementById('email')
-let upOcupation = document.getElementById('ocupation')
+let upOcupation = document.getElementById('editSelect')
 
    for (let update = 0; update < arrayUpdate.length; update++) {
       
