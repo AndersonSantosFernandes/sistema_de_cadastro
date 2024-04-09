@@ -18,7 +18,7 @@ const sectionList = (listaCard) =>{
 //Lista de pessoas cadastradas
 let showList = document.getElementById('listPersons')
 let showHeader = document.getElementById('headPersons')
-let showBody = document.getElementById('headPersons')
+let showBody = document.getElementById('bodyPersons')
 let showBtnPdf = document.getElementById('btnPdf')
 const btnPdfs = document.getElementById('gerapdf')
 const personCadList = JSON.parse(localStorage.getItem('personCad'))

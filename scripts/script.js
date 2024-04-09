@@ -138,11 +138,11 @@ if (sessionStorage.getItem('usuarioLogado')) {
 <ul class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav navegar ">
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../home/home.html">HOME</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../calculos/calculos.html">Cálculos</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../utilidades/utilidades.html">Utilidades</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../cadastroPessoas/cadastrarPessoas.html">Cadastro de Pessoas</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../cadastroPessoas/cadastrarPessoas.html">Cadastrar</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../listaPessoas/lista.html">Lista de Pessoas</a></li>
-
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../utilidades/utilidades.html">Utilidades</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../calculos/calculos.html">Cálculos</a></li>
+           
         </div>
 
 </ul>
