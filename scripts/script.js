@@ -1,3 +1,4 @@
+//Obtenção de data
 const dataAtual = new Date()
 //padStart(x,x) serve para quando se deseja mostrar um numero sosinho
 //como dia, de 1 a 9 o 0 é acrescentado a esquerda             
