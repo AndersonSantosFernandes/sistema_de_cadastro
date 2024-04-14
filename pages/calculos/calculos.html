@@ -11,7 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../css/main_style.css">
+    <link rel="stylesheet" href="../../css/main_style.css">
+    <link rel="stylesheet" href="./calculos.css">
     <script>
         // Verifica se tem algum usuário logado, caso contrario redireciona para tela de login
         // Evitando acessar a página direto pela url
@@ -19,7 +20,9 @@
             location.href = "../../index.html"
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <title>Cálculos</title>
 </head>
@@ -37,15 +40,38 @@
     <main class="mainHome">
 
         <div class="container" id="content">
-            <h2 class="tituloHome">Cálculos</h2>
 
+            <div class="sorteioOut">
 
-        
+                <div class="sort">
+                    
+                    <div class="inputs">                        
+                        <input type="number" name="" id="initial" placeholder="Inicial">   
+                    </div>
+                    
+                    <div class="inputs">                       
+                        <input type="number" name="" id="final" placeholder="Final">   
+                    </div>
+                    <div class="inputs">
+                        <!-- <input class="btn" type="button" value="Sortear">    -->
+                        <button class="btn btn-primary" onclick="aguardarPorSegundos()">Sortear</button>
+                    </div>
+                </div>
+
+                <div class="sorteando">
+
+                    <div id="returnSort">
+                       
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
     </main>
     <script src="../../scripts/script.js"></script>
-<script src="./calculos.js"></script>
+    <script src="./calculos.js"></script>
 </body>
 
 </html>
