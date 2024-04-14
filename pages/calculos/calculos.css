@@ -20,6 +20,7 @@
     padding: 10px;
     display: flex;
     column-gap: 15px;
+    justify-content: center;
 }
 
 .inputs{
@@ -43,12 +44,13 @@ outline: none;
     width: 15px;
     height: 15px;
     opacity: .1;
-    border: 10px solid blue;
+    border: 10px solid rgb(75, 75, 253);
+    background-image: radial-gradient(orange,rgb(212, 103, 212), orange);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 1.5s;
-    font-size: 150px;
+    font-size: 0px;
     font-weight: bold;
 }
