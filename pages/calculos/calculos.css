@@ -24,7 +24,7 @@
     justify-content: center;
 }
 
-.inputs{
+.inputSort{
     /* border: 1px solid purple; */
     width: 150px;
     text-align: center;
@@ -67,4 +67,9 @@ outline: none;
     display: none;
     align-items: center;
     justify-content: center;
+}
+.clock{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
 }
