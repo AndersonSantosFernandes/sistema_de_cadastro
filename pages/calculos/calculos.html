@@ -37,33 +37,38 @@
     <nav class="navbar navbar-expand-lg " id="navegando">
         <!-- Aqui é renderizado o menú -->
     </nav>
-    <main class="mainHome">
+    <main class="mainHome">        
 
         <div class="container" id="content">
-
+            <h1>Sorteio randomico</h1>
             <div class="sorteioOut">
 
                 <div class="sort">
-                    
-                    <div class="inputs">                        
-                        <input type="number" name="" id="initial" placeholder="Inicial">   
+
+                    <div class="inputs">
+                        <input type="number" name="" id="initial" placeholder="Inicial">
                     </div>
-                    
-                    <div class="inputs">                       
-                        <input type="number" name="" id="final" placeholder="Final">   
+
+                    <div class="inputs">
+                        <input type="number" name="" id="final" placeholder="Final">
                     </div>
                     <div class="inputs">
-                        <!-- <input class="btn" type="button" value="Sortear">    -->
-                        <button class="btn btn-primary" onclick="aguardarPorSegundos()">Sortear</button>
+                        <button id="btnStart" class="btn btn-primary" onclick="aguardarPorSegundos()">Sortear</button>
+                        
                     </div>
                 </div>
 
                 <div class="sorteando">
+                    <div id="titleSort">
 
+                    </div>
+                    <div id="contador">
+
+                    </div>
                     <div id="returnSort">
-                       <div class="sorteando">
-                        
-                       </div>
+                        <div class="sorteando">
+
+                        </div>
                     </div>
 
                 </div>
