@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center; 
+    flex-direction: column;
 }
 
 .sort{
@@ -53,4 +54,17 @@ outline: none;
     transition: 1.5s;
     font-size: 0px;
     font-weight: bold;
+}
+
+#contador{
+    width: 300px;
+    height: 300px;
+    border: 10px solid rgb(151, 44, 194);
+    background-image: radial-gradient(orange,rgb(82, 209, 43), orange);
+    border-radius: 50%;
+    font-size: 150px;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
