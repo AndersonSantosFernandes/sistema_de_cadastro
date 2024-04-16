@@ -25,7 +25,15 @@ function gravar() {
         for (let i = 0; i < verificaDisponibilidade.length; i++) {
             // Impede decadastrar e-mail repetido
             if (verificaDisponibilidade[i]['emailUs'] == getEmail) {
-                alert(`O e-mail ${getEmail} já está em uso, tente outro`)
+                // alert(`O e-mail ${getEmail} já está em uso, tente outro`)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: `O email ${getEmail} já está em uso`,
+                    showConfirmButton: false,
+                    timer: 2500
+                  });
+                        
                 verificar = false
                 break;
             }
@@ -44,7 +52,7 @@ function gravar() {
             arrayUsuarios = []
 
             //Clase Usuarios
-            class Usuarios {
+            class Usuarios { 
 
                 constructor(nome, email, senha, dataCadastro) {
                     this.nome = nome
@@ -68,6 +76,14 @@ function gravar() {
                     localStorage.setItem('cadastrado', JSON.stringify(arrayUsuarios))
 
                     location.href = "./index.html"
+
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Cadastrado com êxito",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
                 }
             }
             // Instanciando a classe Usuarios
@@ -77,7 +93,14 @@ function gravar() {
 
         }
     } else {
-        alert('Senhas não conferem. tente outa vez...')
+        // alert('Senhas não conferem. tente outa vez...')
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Senhas não conferem",
+            showConfirmButton: false,
+            timer: 1500
+          });
     }
 }
 
@@ -175,6 +198,7 @@ function logar() {
             objetoLogado = {nomeSessao: retornoLogado[i]['nomeUs'], emailSessao: retornoLogado[i]['emailUs'] }
             sessionStorage.setItem('usuarioLogado', JSON.stringify(objetoLogado))
 
+        
             // alert("Logado com sucesso")
             location.href = "./pages/home/home.html"
             break;
@@ -184,7 +208,8 @@ function logar() {
 
     // Se não encontrar e-mail e senha que combinam a sessão não é criada e não executa o login
     if (!sessionStorage.getItem('usuarioLogado')) {
-        alert('E-mail ou senha inválidos ou usuário não cadastrado')
+        // alert('E-mail ou senha inválidos ou usuário não cadastrado')
+        Swal.fire("E-mail ou senha nválidos ou não cadastrado!");
     }
 
 }

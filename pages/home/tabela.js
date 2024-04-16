@@ -11,7 +11,7 @@ for (let j = 0; j < verificaDisponibilidade.length; j++) {
         desabilitaDelete = 'disabled="disabled"'
         
     }
-    tabela.innerHTML +=
+    tabela.innerHTML += 
         `
 <tr>
 <td>${verificaDisponibilidade[j]['nomeUs']}</td>
@@ -23,3 +23,4 @@ for (let j = 0; j < verificaDisponibilidade.length; j++) {
 }
 }
 //<td class="alinhaIconeTb"><button ${desabilitaDelete} class="btnDelete" onclick="delUsuario('${j}')">Del</button></td>
+

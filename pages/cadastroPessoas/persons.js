@@ -4,7 +4,7 @@ listaCargos = document.getElementById('personOcupation')
 
 helpArrayPerson = []//Array auxiliar pessoas
 // Inserir nova pessoa
-function newPerson() {
+function newPerson() { 
 
     let newName = document.getElementById('personNome')
     let newLastName = document.getElementById('personLastName')
@@ -13,7 +13,14 @@ function newPerson() {
 
     // Evita salvar campos vazios
     if (newName.value.length < 2 || newLastName.value.length < 2 || newEmail.value.length < 2) {
-        alert('Não deixe campos vazios')
+        // alert('Não deixe campos vazios')
+        Swal.fire({
+            icon: "error",
+            // title: "Oops...",
+            text: "Não deixe campos vazios",
+            
+          });
+    
     } else {
 
         // objeto que recebe dos inputs
@@ -35,7 +42,14 @@ function newCargo() {
     let newOcupation = document.getElementById('newOcupation')
 
     if (newOcupation.value.length < 5) {
-        alert('Descreva um cargo com no mínimo 5 letras')
+        // alert('Descreva um cargo com no mínimo 5 letras')
+        
+        Swal.fire({
+            icon: "error",
+            // title: "Oops...",
+            text: "Descreva um cargo com no mínimo 5 letras",
+        });
+
     } else {
 
         objectOcupation = { ocupation: newOcupation.value }
