@@ -45,7 +45,13 @@ const reset = ()=>{
   
     if (initialValue < 1 || finalValue < 1 || !initialValue || !finalValue) {
   
-      alert('Insira qualquer valor maior que 0')
+      // alert('Insira qualquer valor maior que 0')
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Insira qualquer valor maior que 0",
+        
+      });
   
     } else {
   
@@ -56,7 +62,13 @@ const reset = ()=>{
   
       if (initialValue >= finalValue) {
         console.log("O número inicial deve ser menor que o número final.");
-        alert('O número inicial deve ser menor que o número final.')
+        // alert('O número inicial deve ser menor que o número final.')
+        Swal.fire({
+          icon: "error",
+         
+          text: "O número inicial deve ser menor que o final.",
+          
+        });
       } else {
   
         
@@ -73,5 +85,5 @@ const reset = ()=>{
       }
     }
   
-  }
+  } 
   

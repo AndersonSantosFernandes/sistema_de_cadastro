@@ -13,7 +13,7 @@ const sectionList = (listaCard) =>{
    }
    location.href = "lista.html"
 }
-
+ 
 
 //Lista de pessoas cadastradas
 let showList = document.getElementById('listPersons')
@@ -44,7 +44,6 @@ if (personCadList.length == 0) {
       <th>E-mail</th>
       <th>Cargo</th>            
     </tr>
-
       
       `      
       for (let li = 0; li < personCadList.length; li++) {
@@ -60,10 +59,7 @@ if (personCadList.length == 0) {
           </tr>
          
          `
-
-      }
-
-     
+      }     
 
    }else{
 btnPdfs.style.display = 'none'
