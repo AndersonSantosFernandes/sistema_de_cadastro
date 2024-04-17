@@ -32,8 +32,8 @@ function gravar() {
                     title: `O email ${getEmail} já está em uso`,
                     showConfirmButton: false,
                     timer: 2500
-                  });
-                        
+                });
+
                 verificar = false
                 break;
             }
@@ -42,65 +42,79 @@ function gravar() {
 
 
 
-    //Verificação de senhas
-    if (getSenha === getConfirma) {
-
-        //Se tentar um e-mail já cadastrado não executa esse trecho
-        if (verificar == true) {
-
-            //Pega do localStorage, recebe o push e retornar atualizado 
-            arrayUsuarios = []
-
-            //Clase Usuarios
-            class Usuarios { 
-
-                constructor(nome, email, senha, dataCadastro) {
-                    this.nome = nome
-                    this.email = email
-                    this.senha = senha
-                    this.dataCadastro = dataCadastro
-                }
-
-                salvarStorage() {
-
-                    //cria um ojeto con informações do usuário
-                    const objetoUsuario = { nomeUs: this.nome, emailUs: this.email, senhaUs: this.senha, dataCad: this.dataCadastro }
-
-                    //Pega o array existente no localStorage e converte para objeto
-                    arrayUsuarios = JSON.parse(localStorage.getItem('cadastrado')) || []
-
-                    //Faz o push com mais um objeto
-                    arrayUsuarios.push(objetoUsuario)
-
-                    //Salva no localstorage atualizado com a nova informação
-                    localStorage.setItem('cadastrado', JSON.stringify(arrayUsuarios))
-
-                    location.href = "./index.html"
-
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Cadastrado com êxito",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-                }
-            }
-            // Instanciando a classe Usuarios
-            const salvando = new Usuarios(getNome, getEmail, getSenha, dataCompleta)
-            // Executando o método para salvar novo usuário
-            salvando.salvarStorage()
-
-        }
-    } else {
+    if (getNome == false || getEmail == false || getSenha == false) {
         // alert('Senhas não conferem. tente outa vez...')
         Swal.fire({
             position: "top-end",
             icon: "error",
-            title: "Senhas não conferem",
+            title: "Preencha todos os campos",
             showConfirmButton: false,
             timer: 1500
-          });
+        });
+    } else {
+
+
+
+        //Verificação de senhas
+        if (getSenha === getConfirma) {
+
+            //Se tentar um e-mail já cadastrado não executa esse trecho
+            if (verificar == true) {
+
+                //Pega do localStorage, recebe o push e retornar atualizado 
+                arrayUsuarios = []
+
+                //Clase Usuarios
+                class Usuarios {
+
+                    constructor(nome, email, senha, dataCadastro) {
+                        this.nome = nome
+                        this.email = email
+                        this.senha = senha
+                        this.dataCadastro = dataCadastro
+                    }
+
+                    salvarStorage() {
+
+                        //cria um ojeto con informações do usuário
+                        const objetoUsuario = { nomeUs: this.nome, emailUs: this.email, senhaUs: this.senha, dataCad: this.dataCadastro }
+
+                        //Pega o array existente no localStorage e converte para objeto
+                        arrayUsuarios = JSON.parse(localStorage.getItem('cadastrado')) || []
+
+                        //Faz o push com mais um objeto
+                        arrayUsuarios.push(objetoUsuario)
+
+                        //Salva no localstorage atualizado com a nova informação
+                        localStorage.setItem('cadastrado', JSON.stringify(arrayUsuarios))
+
+                        location.href = "./index.html"
+
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Cadastrado com êxito",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                }
+                // Instanciando a classe Usuarios
+                const salvando = new Usuarios(getNome, getEmail, getSenha, dataCompleta)
+                // Executando o método para salvar novo usuário
+                salvando.salvarStorage()
+
+            }
+        } else {
+            // alert('Senhas não conferem. tente outa vez...')
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Senhas não conferem",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
     }
 }
 
@@ -195,10 +209,10 @@ function logar() {
 
             // Encontrando a combinação, cria uma com o nome do usuário
 
-            objetoLogado = {nomeSessao: retornoLogado[i]['nomeUs'], emailSessao: retornoLogado[i]['emailUs'] }
+            objetoLogado = { nomeSessao: retornoLogado[i]['nomeUs'], emailSessao: retornoLogado[i]['emailUs'] }
             sessionStorage.setItem('usuarioLogado', JSON.stringify(objetoLogado))
 
-        
+
             // alert("Logado com sucesso")
             location.href = "./pages/home/home.html"
             break;
