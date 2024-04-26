@@ -74,6 +74,12 @@ btnPdfs.style.display = 'none'
          <h5>${personCadList[i]['lastName']}</h5>
          <h5>${personCadList[i]['email']}</h5>
          <h5 class="strong">${personCadList[i]['ocupation']}</h5>
+         <h5>${personCadList[i]['street']}</h5>
+         <h5>${personCadList[i]['number']}</h5>
+         <h5>${personCadList[i]['cep']}</h5>
+         <h5>${personCadList[i]['bairro']}</h5>
+         <h5>${personCadList[i]['city']}</h5>
+         <h5>${personCadList[i]['state']}</h5>
          
          <hr>
          <div class="out__btn">
@@ -152,28 +158,37 @@ function updateUsers(indiceUpdate) {
          <input class="modalInput" value="${arraySelectPerson[sel]['name']}" type="text" name="" id="name">
          <input class="modalInput" value="${arraySelectPerson[sel]['lastName']}" type="text" name="" id="lastName">
          <input class="modalInput" value="${arraySelectPerson[sel]['email']}" type="email" name="" id="email" disabled="disabled">
-         
-         <hr>
 
+         <input class="modalInput" value="${arraySelectPerson[sel]['street']}" type="email" name="" id="myStreet">
+         <input class="modalInput" value="${arraySelectPerson[sel]['number']}" type="email" name="" id="myNumber">
+         <input class="modalInput" value="${arraySelectPerson[sel]['bairro']}" type="email" name="" id="myBairro">
+         <input class="modalInput" value="${arraySelectPerson[sel]['cep']}" type="email" name="" id="myCep">
+         <input class="modalInput" value="${arraySelectPerson[sel]['city']}" type="email" name="" id="myCity">
+         <input class="modalInput" value="${arraySelectPerson[sel]['state']}" type="email" name="" id="myState">
+                  <hr>
          <button type="button" class="btn btn-primary"  onclick="saveEdition('${sel}')" >
          Salvar
           </button>
-
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancela</button>
          `
       }
    }
-
 }
 // Salvamento de fato da edição
 arrayUpdate = []
 function saveEdition(indiceSave){
    arrayUpdate = personCadList
-
 let upName = document.getElementById('name')
 let upLastName = document.getElementById('lastName')
 let upEmail = document.getElementById('email')
 let upOcupation = document.getElementById('editSelect')
+
+let upStreet = document.getElementById('myStreet')
+let upNumber = document.getElementById('myNumber')
+let upBairro = document.getElementById('myBairro')
+let upCep = document.getElementById('myCep')
+let upCity = document.getElementById('myCity')
+let upState = document.getElementById('myState')
 
    for (let update = 0; update < arrayUpdate.length; update++) {
       
@@ -182,6 +197,13 @@ let upOcupation = document.getElementById('editSelect')
          arrayUpdate[update]['lastName'] = upLastName.value
          arrayUpdate[update]['email'] = upEmail.value
          arrayUpdate[update]['ocupation'] = upOcupation.value
+
+         arrayUpdate[update]['street'] = upStreet.value
+         arrayUpdate[update]['number'] = upNumber.value
+         arrayUpdate[update]['bairro'] = upBairro.value
+         arrayUpdate[update]['cep'] = upCep.value
+         arrayUpdate[update]['city'] = upCity.value
+         arrayUpdate[update]['state'] = upState.value
          
          localStorage.setItem('personCad', JSON.stringify(arrayUpdate))
 
@@ -219,4 +241,6 @@ btnGenerate.addEventListener("click", () => {
     html2pdf().set(options).from(content).save()
 
 })
+
+
 

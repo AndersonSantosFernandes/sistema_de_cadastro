@@ -45,6 +45,24 @@
             <select class="inputz" name="" id="personOcupation">
                 <!-- lista vem do JS -->
             </select>
+            <br>
+            <label for="meucep">CEP</label><br>
+            <input type="text" onchange="buscaCep()" name="" id="meucep">
+            <br>
+            <label for="logradouro">Logradouro</label><br>
+            <input type="text" name="" id="logradouro">
+            <br>
+            <label for="numero">Número</label><br>
+            <input type="text" name="" id="numero">
+            <br>
+            <label for="bairro">Bairro</label><br>
+            <input type="text" name="" id="bairro">
+            <br>
+            <label for="cidade">Cidade</label><br>
+            <input type="text" name="" id="cidade">
+            <br>
+            <label for="estado">UF</label><br>
+            <input type="text" name="" id="estado">
             <hr>
             <p>
                 <button class="btn btn-primary" onclick="newPerson()">Salvar</button>
@@ -90,19 +108,20 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edite o campo e clique em Salvar, ou Deletar para excluir</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edite o campo e clique em Salvar, ou Deletar
+                        para excluir</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" >
+                <div class="modal-body">
                     <div class="modal-body-div">
-                    <table id="updateCargo">
-                        <!-- Aqui aparece a lista para ediçõ de cargos -->
-                    </table>
-                </div>
+                        <table id="updateCargo">
+                            <!-- Aqui aparece a lista para ediçõ de cargos -->
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    
+
                 </div>
             </div>
         </div>

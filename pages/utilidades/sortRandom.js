@@ -69,7 +69,7 @@ const reset = ()=>{
           text: "O número inicial deve ser menor que o final.",
           
         });
-      } else {
+      } else { 
   
         
         returnSorteio.style.width = "0px"
@@ -80,7 +80,7 @@ const reset = ()=>{
         return new Promise((resolve) => {
           setTimeout(() => {
             sortearNumero(initialValue, finalValue); 
-          }, 5 * 1000); 
+          }, 2 * 1000); 
         });
       }
     }
