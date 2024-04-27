@@ -152,29 +152,59 @@ function deleteOcupation(indiceDelete) {
 }
 
 
-function buscaCep() {
-    let cep = document.getElementById("meucep").value
 
+function buscaCep(){
+    let cep = document.getElementById("meucep").value
+    
+    var regexCEP = /^\d{8}$/; //CEP sem traço
+    var regexCEP1 = /^\d{5}\-\d{3}$/;//CEP com traço
     let logradouros = document.getElementById("logradouro")
     let bairro = document.getElementById("bairro")
     let cidade = document.getElementById("cidade")
     let estado = document.getElementById("estado")
-
-
-    let url = `https://viacep.com.br/ws/${cep}/json/`
-
+    
+    //Verifica se o cep está nos dois formatos aceitos, com traço e sem e com 8numeros
+    if (regexCEP.test(cep) || regexCEP1.test(cep) ) {
+        let url = `https://viacep.com.br/ws/${cep}/json/`
+    
     fetch(url)
-        .then(response => response.json())
-        .then(response => exibir(response))
-
-    function exibir(dados) {
-        console.log(dados)
-
+    .then(response => response.json())
+    .then(response =>exibir(response))
+    
+    function exibir(dados){
+    console.log( "acerto ou erro: ", dados)
+    
+    // Se o cep estiver no formato correto mas não for válido: mensagem de CEP inválido
+    if(dados.erro == true){
+    
+    Swal.fire({
+        icon: "error",    
+        text: "CEP inválido!",    
+      });
+      logradouros.value = ""
+      bairro.value = ""
+      cidade.value = ""
+      estado.value = ""    
+    }else
+    {
         logradouros.value = dados.logradouro
-        bairro.value = dados.bairro
-        cidade.value = dados.localidade
-        estado.value = dados.uf
-
+    bairro.value = dados.bairro
+    cidade.value = dados.localidade
+    estado.value = dados.uf
     }
+    
+    }
+    } else {//Retorno de erro se o formato não atender a condução
+    
+        Swal.fire({
+            icon: "error",    
+            text: "Formato inválido! Verifique",    
+          });
 
-}
+          logradouros.value = ""
+      bairro.value = ""
+      cidade.value = ""
+      estado.value = ""    
+    }    
+    }
+    
