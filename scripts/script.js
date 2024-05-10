@@ -179,7 +179,7 @@ if (sessionStorage.getItem('usuarioLogado')) {
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../cadastroPessoas/cadastrarPessoas.html">Cadastrar</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../listaPessoas/lista.html">Lista de Pessoas</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../utilidades/utilidades.html">Utilidades</a></li>
-        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../users/users.html">Usuários</a></li>
+        <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../users/users.html">Admins.</a></li>
         <li class="nav-iten h2"><a class="nav-link " aria-current="page" href="../sobre/sobre.html">Sobre</a></li>
            
         </div>
