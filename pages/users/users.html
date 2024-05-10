@@ -12,7 +12,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/main_style.css">
-    <link rel="stylesheet" href="./home.css">
     <script>
         // Verifica se tem algum usuário logado, caso contrario redireciona para tela de login
         // Evitando acessar a página direto pela url
@@ -37,22 +36,32 @@
     <main class="mainHome">
 
         <div class="container">
-            <div class="slogan">
-                <div class="show_message">
+            <h2 class="tituloHome">Usuários administradores</h2>
+            <div class="tab">
+                <table class="tabelaUsuarios">
+                    <thead>
+                        <tr >
+                            <th colspan="3">Usuários cadastrados</th>
+                        </tr>
+                        <tr>
+                            <th>Nome</th>
+                            <th>email</th>
+                            <th class="alinhaIconeTb">Data cadástro</th>
+                            <!-- <th class="alinhaIconeTb">Deletar</th> -->
+                        </tr>
 
-                    <p class='deslizante'>
-                        Sistema de cadástro utilizando localStorage + API + componentes
+                    </thead>
+                    <tbody id="corpo">
 
-                    </p>
-                </div>
+                    </tbody>
+                </table>
             </div>
-
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../scripts/script.js"></script>
     <script src="./tabela.js"></script>
-
+    
 </body>
 
 </html>
