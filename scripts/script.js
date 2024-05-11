@@ -215,8 +215,8 @@ function logar() {
 
 
             // alert("Logado com sucesso")
-            // location.href = "./pages/home/home.html"
-            location.href = "./pages/users/users.html"
+             location.href = "./pages/home/home.html"
+           
             break;
         }
 
