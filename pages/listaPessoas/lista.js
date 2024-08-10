@@ -70,16 +70,16 @@ btnPdfs.style.display = 'none'
       showList.innerHTML += `
     
       <div class="card__person">
-         <h3>${personCadList[i]['name']}</h3>
-         <h5>${personCadList[i]['lastName']}</h5>
+         <h3>Nome: ${personCadList[i]['name']}</h3>
+         <h5>Sobrenome: ${personCadList[i]['lastName']}</h5>
          <h5>${personCadList[i]['email']}</h5>
-         <h5 class="strong">${personCadList[i]['ocupation']}</h5>
-         <h5>${personCadList[i]['street']}</h5>
-         <h5>${personCadList[i]['number']}</h5>
-         <h5>${personCadList[i]['cep']}</h5>
-         <h5>${personCadList[i]['bairro']}</h5>
-         <h5>${personCadList[i]['city']}</h5>
-         <h5>${personCadList[i]['state']}</h5>
+         <h5 class="strong">e-mail: ${personCadList[i]['ocupation']}</h5>
+         <h5>Logradouro: ${personCadList[i]['street']}</h5>
+         <h5>Número: ${personCadList[i]['number']}</h5>
+         <h5>CEP: ${personCadList[i]['cep']}</h5>
+         <h5>Bairro: ${personCadList[i]['bairro']}</h5>
+         <h5>Cidade: ${personCadList[i]['city']}</h5>
+         <h5>UF:${personCadList[i]['state']}</h5>
          
          <hr>
          <div class="out__btn">
