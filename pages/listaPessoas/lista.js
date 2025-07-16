@@ -127,15 +127,15 @@ const ocupList = JSON.parse(localStorage.getItem('ocupations'))
 const listOcup = document.getElementById('editSelect')
 console.log(ocupList)
 
-for (let list = 0; list < ocupList.length; list++) {
-   console.log(ocupList[list]['ocupation'])
-listOcup.innerHTML +=
-`
-<option value="${ocupList[list]['ocupation']}">${ocupList[list]['ocupation']}</option>
+   for (let list = 0; list < ocupList.length; list++) {
+      console.log(ocupList[list]['ocupation'])
+   listOcup.innerHTML +=
+   `
+   <option value="${ocupList[list]['ocupation']}">${ocupList[list]['ocupation']}</option>
 
-` 
-   
-}
+   ` 
+      
+   }
 
 
 //Seleciona o arquivo para edição
@@ -145,10 +145,6 @@ function updateUsers(indiceUpdate) {
    let editPersons = document.getElementById('editPerson')
    arraySelectPerson = personCadList
 
-
-   
-
-   
    for (let sel = 0; sel < arraySelectPerson.length; sel++) {
 
       if (indiceUpdate == sel) {
